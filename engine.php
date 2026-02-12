@@ -307,9 +307,9 @@ class EngineSocket
 
     function socket( $address )
     {
-	if ( str_starts_with( $address->host, "[" ) )
-	{
-	    if ( $this->socket6 == null )
+    if ( str_starts_with( $address->host, "[" ) )
+    {
+        if ( $this->socket6 == null )
             {
                 $this->socket6 = socket_create(AF_INET6, SOCK_DGRAM, SOL_UDP);
                 $this->set_timeout($this->socket6,
@@ -318,10 +318,10 @@ class EngineSocket
                 );
             }
             return $this->socket6;
-	}
-	else
-	{
-	    if ( $this->socket4 == null )
+    }
+    else
+    {
+        if ( $this->socket4 == null )
             {
                 $this->socket4 = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
                 $this->set_timeout($this->socket4,
